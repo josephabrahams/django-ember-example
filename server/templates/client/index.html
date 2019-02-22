@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>django-ember-example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="app/config/environment" content="{{ config }}">
+
+    {% if lr_enabled %}
+    <script src="http://localhost:{{ lr_port }}/_lr/livereload.js?port={{ lr_port}}&host=localhost&path=_lr/livereload"></script>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'client/assets/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'client/assets/app.css' %}">
+  </head>
+  <body>
+    <script src="{% static 'client/assets/vendor.js'%}"></script>
+    <script src="{% static 'client/assets/app.js'%}"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.venv/
+/public/static/
+/public/media/
+/server/static/client/
+*.pyc
+*.sqlite3
+.env

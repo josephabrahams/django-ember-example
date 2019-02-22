@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "postinstall": "if [ \"$NODE_ENV\" = \"production\" ]; then npm install --prefix=client; fi",
+    "start": "npm start --prefix=client"
+  },
+  "cacheDirectories": [
+    "client/node_modules"
+  ]
+}
