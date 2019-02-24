@@ -12,6 +12,7 @@ python-decouple = "*"
 whitenoise = "*"
 pyquery = "*"
 dj-database-url = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"

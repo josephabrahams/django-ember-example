@@ -1,9 +1,12 @@
 {
   "scripts": {
-    "postinstall": "if [ \"$NODE_ENV\" = \"production\" ]; then npm install --prefix=client; fi",
-    "start": "npm start --prefix=client"
+    "start": "npm start --prefix=example/ember",
+    "postinstall": "npm install --prefix=example/ember"
   },
   "cacheDirectories": [
-    "client/node_modules"
-  ]
+    "example/ember/node_modules"
+  ],
+  "engines": {
+    "node": "10.15.1"
+  }
 }
