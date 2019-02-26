@@ -4,8 +4,8 @@
 # dependencies
 /node_modules/
 
-# debug directory
-/DEBUG/
+# debug directories
+/DEBUG*/
 
 # misc
 /.env*
