@@ -1,7 +1,8 @@
 .venv/
-/example/static/
-/example/www/static/
-/example/www/media/
+node_modules/
+/superrentals/static/
+/superrentals/www/static/
+/superrentals/www/media/
 *.pyc
 *.sqlite3
 .env
