@@ -5,12 +5,12 @@
   "logo": "https://dj-super-rentals.herokuapp.com/static/assets/images/teaching.png",
   "keywords": ["Django", "Ember", "Ember.js"],
   "env":{
-    "SECRET_KEY": {
-      "generator": "secret"
-    },
     "MAPBOX_ACCESS_TOKEN": {
       "description": "Mapbox Access Token, https://account.mapbox.com/access-tokens/",
       "required": true
+    },
+    "SECRET_KEY": {
+      "generator": "secret"
     }
   },
   "addons":[
@@ -19,9 +19,6 @@
   "buildpacks": [
     {
       "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/istrategylabs/heroku-buildpack-node-cleanup"
     },
     {
       "url": "heroku/python"
