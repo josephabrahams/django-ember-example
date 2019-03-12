@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "npm start --prefix=superrentals/ember",
-    "postinstall": "npm install --prefix=superrentals/ember"
+    "postinstall": "npm install --prefix=superrentals/ember",
+    "heroku-postbuild": "npm run build:production --prefix=superrentals/ember"
   },
   "cacheDirectories": [
     "superrentals/ember/node_modules"

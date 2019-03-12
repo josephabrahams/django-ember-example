@@ -19,8 +19,7 @@
     "lint:js": "eslint .",
     "start": "ember server --port $PORT",
     "test": "ember test",
-    "test:server": "ember test --server",
-    "postinstall": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run build:production; fi"
+    "test:server": "ember test --server"
   },
   "dependencies": {
     "@ember/optional-features": "^0.6.3",
