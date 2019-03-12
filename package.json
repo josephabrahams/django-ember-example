@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "start": "npm start --prefix=example/ember",
-    "postinstall": "npm install --prefix=example/ember"
+    "start": "npm start --prefix=superrentals/ember",
+    "postinstall": "npm install --prefix=superrentals/ember"
   },
   "cacheDirectories": [
-    "example/ember/node_modules"
+    "superrentals/ember/node_modules"
   ],
   "engines": {
     "node": "10.15.1"

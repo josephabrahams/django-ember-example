@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SuperRentals</title>
+    <meta charset="utf-8">
+
+    <!-- content-for-head -->
+    {{content-for "head"}}
+    <!-- /content-for-head -->
+
+    <!-- content-for-head-footer -->
+    {{content-for "head-footer"}}
+    <!-- /content-for-head-footer -->
+  </head>
+  <body>
+    <!-- content-for-body -->
+    {{content-for "body"}}
+    <!-- /content-for-body -->
+
+    <h1 id="name"></h1>
+    <pre id="content"></pre>
+    <script>
+      const name = 'app/config/environment'
+      const content = JSON.parse(decodeURIComponent(document
+        .querySelector(`[name="${name}"]`)
+        .getAttribute('content')));
+      document.getElementById('name').innerText = name;
+      document.getElementById('content').innerText = JSON.stringify(content, null, 2);
+    </script>
+
+    <!-- content-for-body-footer -->
+    {{content-for "body-footer"}}
+    <!-- /content-for-body-footer -->
+  </body>
+</html>

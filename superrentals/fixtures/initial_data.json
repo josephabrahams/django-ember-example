@@ -1,0 +1,50 @@
+[
+  {
+    "model": "superrentals.rental",
+    "pk": "39169c8d-cd7d-41f9-9f08-8e95f2eb45c1",
+    "fields": {
+      "title": "Downtown Charm",
+      "slug": "downtown-charm",
+      "owner": "Violet Beauregarde",
+      "city": "Portland",
+      "category": "Apartment",
+      "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f7\/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg",
+      "bedrooms": 3,
+      "description": "Convenience is at your doorstep with this charming downtown rental. Great restaurants and active night life are within a few feet.",
+      "created_at": "2019-03-11T18:21:44.695Z",
+      "updated_at": "2019-03-11T18:21:44.695Z"
+    }
+  },
+  {
+    "model": "superrentals.rental",
+    "pk": "b89bd11c-addb-4df1-b655-ff9014f180da",
+    "fields": {
+      "title": "Urban Living",
+      "slug": "urban-living",
+      "owner": "Mike Teavee",
+      "city": "Seattle",
+      "category": "Condo",
+      "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/0\/0e\/Alfonso_13_Highrise_Tegucigalpa.jpg",
+      "bedrooms": 1,
+      "description": "A commuters dream. This rental is within walking distance of 2 bus stops and the Metro.",
+      "created_at": "2019-03-11T18:19:51.767Z",
+      "updated_at": "2019-03-11T18:22:05.408Z"
+    }
+  },
+  {
+    "model": "superrentals.rental",
+    "pk": "f06e554d-9043-4c6d-9e19-9c56701f0c4e",
+    "fields": {
+      "title": "Grand Old Mansion",
+      "slug": "grand-old-mansion",
+      "owner": "Veruca Salt",
+      "city": "San Francisco",
+      "category": "Estate",
+      "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/cb\/Crane_estate_(5).jpg",
+      "bedrooms": 15,
+      "description": "This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.",
+      "created_at": "2019-03-11T18:14:01.892Z",
+      "updated_at": "2019-03-11T18:22:10.250Z"
+    }
+  }
+]
