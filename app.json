@@ -1,0 +1,30 @@
+{
+  "name": "dj-super-rentals",
+  "description": "A simple app to demonstrate how to integrate Django & Ember.",
+  "repository": "https://github.com/josephabrahams/dj-super-rentals",
+  "logo": "https://dj-super-rentals.herokuapp.com/static/favicon.png",
+  "keywords": ["Django", "Ember", "Ember.js"],
+  "env":{
+    "SECRET_KEY": {
+      "generator": "secret"
+    },
+    "MAPBOX_ACCESS_TOKEN": {
+      "description": "Mapbox Access Token, https://account.mapbox.com/access-tokens/",
+      "required": true
+    }
+  },
+  "addons":[
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/istrategylabs/heroku-buildpack-node-cleanup"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

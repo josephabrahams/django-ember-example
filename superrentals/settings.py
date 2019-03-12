@@ -206,6 +206,6 @@ EMBER_CONFIG = {
     # ember-simple-leaflet-maps
     # See: https://joseph.is/2CirF9p
     'ember-simple-leaflet-maps': {
-        'apiKey': config('LEAFLET_MAPS_API_KEY', default=''),
+        'apiKey': config('MAPBOX_ACCESS_TOKEN', default=''),
     }
 }

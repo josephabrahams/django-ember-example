@@ -1,4 +1,6 @@
 # dj-super-rentals
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 A simple app to demonstrate how to integrate Django & Ember.
 
 Based on: <https://guides.emberjs.com/release/tutorial/ember-cli/>.
