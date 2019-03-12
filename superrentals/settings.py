@@ -195,12 +195,17 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json'
 }
 
-# Load Ember config from environment
-EMBER_ENV_PREFIX = 'EMBER_ENV_'
-EMBER_ENV = {k.replace(EMBER_ENV_PREFIX, ''): v for k, v in os.environ.items()
-             if k.startswith(EMBER_ENV_PREFIX)}
-
 # Ember LiveReload Server
 LIVERELOAD_ENABLED = DEBUG and config('LIVERELOAD', default=False, cast=bool)
 LIVERELOAD_PORT = config('LIVERELOAD_PORT', cast=int,
                          default=config('PORT', cast=int, default=8000)+100)
+
+# Ember Configuration
+# Used to update superrentals/ember/config/environment.js at runtime.
+EMBER_CONFIG = {
+    # ember-simple-leaflet-maps
+    # See: https://joseph.is/2CirF9p
+    'ember-simple-leaflet-maps': {
+        'apiKey': config('LEAFLET_MAPS_API_KEY', default=''),
+    }
+}

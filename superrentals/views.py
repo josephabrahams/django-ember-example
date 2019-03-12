@@ -19,7 +19,7 @@ def ember(request, **kwargs):
                                      'static/index.html'))
     encoded_config = ember('[name="app/config/environment"]').attr['content']
     config = json.loads(urllib.parse.unquote(encoded_config))
-    config.update(settings.EMBER_ENV)
+    config.update(settings.EMBER_CONFIG)
     context = {'config': urllib.parse.quote(json.dumps(config)),
                'lr_enabled': settings.LIVERELOAD_ENABLED,
                'lr_port': settings.LIVERELOAD_PORT}
