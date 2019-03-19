@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "start": "npm start --prefix=superrentals/ember",
     "postinstall": "npm install --prefix=superrentals/ember",
@@ -8,6 +9,6 @@
     "superrentals/ember/node_modules"
   ],
   "engines": {
-    "node": "10.15.1"
+    "node": "10.15"
   }
 }

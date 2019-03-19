@@ -7,7 +7,7 @@ Based on: <https://guides.emberjs.com/release/tutorial/ember-cli/>.
 
 ## Requirements
 - Python 3.7
-- Node 10.15.1
+- Node 10.15
 - PostgreSQL
 - [Pipenv](https://pipenv.readthedocs.io/en/latest/)
 - [nvm](https://github.com/creationix/nvm)
