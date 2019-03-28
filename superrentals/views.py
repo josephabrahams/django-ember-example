@@ -14,7 +14,8 @@ from .serializers import RentalSerializer
 
 
 def ember(request, **kwargs):
-    ember = pq(filename=os.path.join(settings.DJ_ROOT, 'static/index.html'))
+    ember = pq(filename=os.path.join(settings.DJANGO_ROOT,
+                                     'static/index.html'))
     encoded_config = ember(
             '[name="superrentals/config/environment"]').attr['content']
     config = json.loads(urllib.parse.unquote(encoded_config))
