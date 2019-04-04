@@ -3,6 +3,9 @@ services:
   django:
     build: .
     command: pipenv run python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - /app/superrentals/ember/node_modules
     environment:
       - DJANGO_PORT=8000
       - DATABASE_URL=postgres://root:password@postgresql/superrentals
