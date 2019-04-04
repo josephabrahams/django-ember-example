@@ -6,8 +6,6 @@ services:
     environment:
       - DJANGO_PORT=8000
       - DATABASE_URL=postgres://root:password@postgresql/superrentals
-    volumes:
-      - .:/app
     ports:
       - "8000:8000"
     stdin_open: true
