@@ -16,6 +16,10 @@ psycopg2-binary = "*"
 djangorestframework = "*"
 djangorestframework-jsonapi = "*"
 django-filter = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
