@@ -19,12 +19,18 @@ $ cp .env.example .env
 $ createdb superrentals
 $ pipenv install
 $ pipenv run python manage.py migrate
-$ nvm use
-$ npm install
+$ nvm install
 ```
 
 ## Local development
 ```bash
 $ pipenv shell
+$ nvm use
 $ foreman start -f Procfile.dev
+```
+
+## Run Linters & Tests
+```bash
+$ pipenv shell
+$ foreman run npm test
 ```

@@ -11,16 +11,14 @@
     "test": "tests"
   },
   "scripts": {
-    "which": "which ember",
     "build": "ember build",
-    "build:watch": "ember build --watch",
-    "build:test": "ember build --environment=test",
     "build:production": "ember build --environment=production",
+    "lint": "npm run lint:hbs && npm run lint:js",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "start": "ember server --port $PORT",
-    "test": "ember test",
-    "test:server": "ember test --server"
+    "start": "ember server --port \"$PORT\"",
+    "test": "ember test --test-port \"$TEST_PORT\"",
+    "test:server": "ember test --server --test-port \"$TEST_PORT\""
   },
   "dependencies": {
     "@ember/optional-features": "^0.6.3",
