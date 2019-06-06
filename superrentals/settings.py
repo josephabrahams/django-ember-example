@@ -30,11 +30,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # Disable Django's own staticfiles handling in favour of WhiteNoise, for
-    # greater consistency between gunicorn and `./manage.py runserver`. See:
-    # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
-    'whitenoise.runserver_nostatic',
 
+    # Disable Django's own staticfiles handling in favour of WhiteNoise,
+    # for greater consistency between gunicorn and runserver.
+    # See: https://joseph.is/2WcsmIp
+    'whitenoise.runserver_nostatic',
     'rest_framework',
     'rest_framework_json_api',
     'django_filters',
@@ -79,9 +79,10 @@ WSGI_APPLICATION = 'superrentals.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # Change 'default' database configuration with $DATABASE_URL.
+CONN_MAX_AGE = config('CONN_MAX_AGE', default=600, cast=int)
 DATABASE_SSL = config('DATABASE_SSL', default=True, cast=bool)
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600,
+    'default': dj_database_url.config(conn_max_age=CONN_MAX_AGE,
                                       ssl_require=DATABASE_SSL),
 }
 

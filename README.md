@@ -8,29 +8,25 @@ Based on: <https://guides.emberjs.com/release/tutorial/ember-cli/>.
 ## Requirements
 - Python 3.7
 - Node 10.15
-- PostgreSQL
 - [Pipenv](https://pipenv.readthedocs.io/en/latest/)
 - [nvm](https://github.com/creationix/nvm)
-- [foreman](https://github.com/ddollar/foreman) or similar (e.g. forego, node-foreman, honcho)
 
 ## Installation
 ```bash
 $ cp .env.example .env
-$ createdb superrentals
-$ pipenv install
-$ pipenv run python manage.py migrate
+$ pipenv install --dev
 $ nvm install
+$ pipenv run honcho run python manage.py migrate
 ```
 
 ## Local development
 ```bash
 $ pipenv shell
 $ nvm use
-$ foreman start -f Procfile.dev
+$ honcho start -f Procfile.dev
 ```
 
 ## Run Linters & Tests
 ```bash
-$ pipenv shell
-$ foreman run npm test
+$ honcho run npm test
 ```

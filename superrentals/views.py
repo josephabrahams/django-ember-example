@@ -32,13 +32,11 @@ class RentalViewSet(viewsets.ModelViewSet):
     queryset = Rental.objects.all()
     serializer_class = RentalSerializer
     http_method_names = ['get', 'head', 'options']
-    ordering_fields = ('title', 'slug', 'owner', 'city',
-                       'category', 'bedrooms',)
+    ordering_fields = ('title', 'owner', 'city', 'category', 'bedrooms',)
     rels = ('exact', 'iexact', 'contains', 'icontains',
             'gt', 'gte', 'lt', 'lte', 'in', 'regex', 'isnull',)
     filterset_fields = {
         'title': rels,
-        'slug': rels,
         'owner': rels,
         'city': rels,
         'category': rels,

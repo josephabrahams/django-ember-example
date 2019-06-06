@@ -9,7 +9,6 @@ class RentalSerializer(serializers.ModelSerializer):
         model = Rental
         fields = (
             'title',
-            'slug',
             'owner',
             'city',
             'category',
