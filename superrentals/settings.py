@@ -121,28 +121,29 @@ ALLOWED_HOSTS = ['*']
 WHITENOISE_ROOT = os.path.join(DJANGO_ROOT, 'www')
 STATIC_ROOT = os.path.join(WHITENOISE_ROOT, 'static')
 STATIC_URL = '/static/'
+if not os.path.isdir(STATIC_ROOT):
+    os.makedirs(STATIC_ROOT)
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [
-    os.path.join(DJANGO_ROOT, 'static'),
-]
+# Add the ember dist directory to the collectstatic dirs if it exists. Django
+# complains if the directory doesn't exist (i.e you haven't run ember build).
+EMBER_DIST = os.path.join(DJANGO_ROOT, 'static')
+if os.path.isdir(EMBER_DIST):
+    STATICFILES_DIRS = [
+        EMBER_DIST
+    ]
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'superrentals.storage.SuperRentalsFileStorage'
 
 # Logging
+LOG_LEVEL = config('LOG_LEVEL', 'DEBUG').upper()
+DJANGO_LOG_LEVEL = config('DJANGO_LOG_LEVEL', 'INFO').upper()
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
+        'default': {
             'format': '%(levelname)s %(message)s'
         }
     },
@@ -154,13 +155,19 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'formatter': 'default'
         }
     },
     'loggers': {
-        'testlogger': {
-            'handlers': ['console'],
-            'level': 'INFO',
+        'django': {
+            'level': DJANGO_LOG_LEVEL,
+            'propagate': True,
+            'handlers': ['console']
+        },
+        'superrentals': {
+            'level': LOG_LEVEL,
+            'propagate': True,
+            'handlers': ['console']
         }
     }
 }

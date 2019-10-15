@@ -3,7 +3,7 @@ import os
 import urllib
 
 from django.conf import settings
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader
 
 from pyquery import PyQuery as pq
@@ -14,8 +14,15 @@ from .serializers import RentalSerializer
 
 
 def ember(request, **kwargs):
-    ember = pq(filename=os.path.join(settings.DJANGO_ROOT,
-                                     'static/index.html'))
+    index_file = 'static/index.html'
+    index_file_path = os.path.join(settings.DJANGO_ROOT, index_file)
+
+    if not os.path.isfile(index_file_path):
+        raise Http404('{} does not exist. Make sure to build the '
+                      ' Ember app before visiting this page.'
+                      .format(index_file))
+
+    ember = pq(filename=index_file_path)
     encoded_config = ember(
             '[name="superrentals/config/environment"]').attr['content']
     config = json.loads(urllib.parse.unquote(encoded_config))
